@@ -1,5 +1,4 @@
 
-/* ---------- Paleta (cambiá los colores acá) ---------- */
 :root {
   --asfalto: #1c1a14;
   --amarillo: #f2b705;
@@ -12,7 +11,6 @@
   --fuente-texto: "Barlow", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
 }
 
-/* ---------- Base ---------- */
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 4.5rem; }
 body { margin: 0; font: 1.05rem/1.6 var(--fuente-texto); color: var(--texto); background: var(--blanco); }
@@ -28,7 +26,6 @@ a { color: inherit; }
 .claro { background: var(--hormigon); }
 .oscura { background: var(--asfalto); color: var(--blanco); }
 
-/* ---------- Barra superior ---------- */
 .barra {
   position: sticky; top: 0; z-index: 10;
   display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
@@ -40,7 +37,6 @@ a { color: inherit; }
 .barra nav a { text-decoration: none; font-weight: 600; padding: .25rem 0; }
 .barra nav a:hover { color: var(--amarillo); }
 
-/* ---------- Portada: carrusel CSS + presentación encima ---------- */
 .portada { position: relative; min-height: 75vh; display: grid; align-items: center; color: var(--blanco); background: var(--asfalto); overflow: hidden; }
 .carrusel { position: absolute; inset: 0; }
 .carrusel img {
@@ -61,7 +57,6 @@ a { color: inherit; }
 
 .franja { height: 18px; background: repeating-linear-gradient(-45deg, var(--amarillo) 0 22px, var(--asfalto) 22px 44px); }
 
-/* ---------- Botones ---------- */
 .boton {
   display: inline-block; padding: .85rem 1.6rem; margin: 0 .5rem .5rem 0;
   background: var(--amarillo); color: var(--asfalto);
@@ -73,7 +68,6 @@ a { color: inherit; }
 .boton.secundario { background: transparent; color: var(--blanco); }
 .boton.secundario:hover { background: var(--blanco); color: var(--asfalto); border-color: var(--blanco); }
 
-/* ---------- Servicios ---------- */
 .tarjetas { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; }
 .tarjetas article {
   display: flex; flex-direction: column;
@@ -85,12 +79,10 @@ a { color: inherit; }
 .enlace { font-weight: 600; text-decoration: none; }
 .enlace:hover { color: var(--tierra); text-decoration: underline; }
 
-/* ---------- Cómo trabajamos (contador CSS) ---------- */
 .pasos { list-style: none; padding: 0; margin: 2rem 0 0; counter-reset: paso; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; }
 .pasos li { counter-increment: paso; padding: 1.5rem; background: var(--blanco); border-top: 6px solid var(--tierra); }
 .pasos li::before { content: counter(paso); display: block; font: 800 3rem/1 var(--fuente-titulos); color: var(--amarillo-osc); }
 
-/* ---------- Galería con visor (:target) ---------- */
 .galeria { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
 .foto {
   position: relative; display: block; aspect-ratio: 4 / 3; overflow: hidden;
@@ -104,7 +96,6 @@ a { color: inherit; }
 .visor:target { display: grid; }
 .visor img { max-width: 92%; max-height: 90vh; border: 4px solid var(--amarillo); }
 
-/* ---------- Formulario ---------- */
 .formulario { display: grid; grid-template-columns: 1fr; gap: 1rem; max-width: 720px; }
 .formulario label { display: grid; gap: .3rem; font-weight: 600; }
 .formulario input, .formulario select, .formulario textarea {
@@ -116,14 +107,12 @@ a { color: inherit; }
 .formulario fieldset label, .formulario .check { display: flex; align-items: center; gap: .5rem; font-weight: 400; }
 .formulario input[type="radio"], .formulario input[type="checkbox"] { width: 1.1rem; height: 1.1rem; accent-color: var(--tierra); padding: 0; }
 
-/* ---------- Preguntas frecuentes (<details>) ---------- */
 .faq { display: grid; gap: .75rem; max-width: 760px; margin-top: 2rem; }
 .faq details { background: var(--blanco); border-left: 6px solid var(--amarillo); padding: .9rem 1.2rem; }
 .faq summary { cursor: pointer; font-weight: 600; }
 .faq details[open] { border-color: var(--tierra); }
 .faq p { margin: .6rem 0 0; }
 
-/* ---------- Contacto ---------- */
 .redes { list-style: none; padding: 0; margin: 2rem 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
 .red {
   display: block; padding: 1rem 1.2rem; background: var(--hormigon); color: var(--texto);
@@ -133,7 +122,6 @@ a { color: inherit; }
 .whatsapp { border-color: #25d366; }
 .instagram { border-color: #e1306c; }
 
-/* ---------- Pie y botón flotante ---------- */
 footer { padding: 1.5rem; text-align: center; background: var(--asfalto); color: var(--blanco); border-top: 4px solid var(--amarillo); }
 footer p { margin: 0; font-size: .95rem; }
 .flotante {
@@ -142,7 +130,6 @@ footer p { margin: 0; font-size: .95rem; }
   font-weight: 700; text-decoration: none; border-radius: 999px; box-shadow: 0 4px 12px rgba(0,0,0,.3);
 }
 
-/* ---------- Tablet y escritorio ---------- */
 @media (min-width: 700px) {
   .formulario { grid-template-columns: 1fr 1fr; }
   .formulario .ancho { grid-column: 1 / -1; }
@@ -156,7 +143,6 @@ footer p { margin: 0; font-size: .95rem; }
   .carrusel img:first-child { opacity: 1; }
 }
 
-/* ---------- Cursor dot + ring (solo en dispositivos con mouse) ---------- */
 .cursor-punto, .cursor-anillo { display: none; }
 
 @media (hover: hover) and (pointer: fine) {
@@ -186,16 +172,13 @@ footer p { margin: 0; font-size: .95rem; }
     width: 56px; height: 56px; background: rgba(242, 183, 5, .15);
   }
 }
-/* ---------- Animaciones ---------- */
 
-/* Título: aparece difuminado y se enfoca */
 @keyframes enfocar {
   from { opacity: 0; filter: blur(16px); letter-spacing: .08em; }
   to   { opacity: 1; filter: blur(0);    letter-spacing: normal; }
 }
 .portada h1 { animation: enfocar 1.4s ease-out backwards; }
 
-/* Textos de la portada: suben suave */
 @keyframes subir {
   from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -204,7 +187,6 @@ footer p { margin: 0; font-size: .95rem; }
 .portada p:nth-of-type(1) { animation-delay: .6s; }
 .portada .anios           { animation-delay: .8s; }
 
-/* Botones: entran deslizándose, uno después del otro */
 @keyframes deslizar {
   from { opacity: 0; transform: translateX(-40px); }
   to   { opacity: 1; transform: translateX(0); }
@@ -213,11 +195,9 @@ footer p { margin: 0; font-size: .95rem; }
 .portada .boton:nth-of-type(1) { animation-delay: 1s; }
 .portada .boton:nth-of-type(2) { animation-delay: 1.2s; }
 
-/* Botones: se levantan al pasar el mouse */
 .boton { transition: background .2s, transform .2s, box-shadow .2s; }
 .boton:hover { transform: translateY(-3px); box-shadow: 0 6px 14px rgba(0, 0, 0, .25); }
 
-/* Redes + botón de WhatsApp: flotan juntos (misma animación y mismo tiempo) */
 @keyframes flotar {
   0%, 100% { translate: 0 0; }
   50%      { translate: 0 -8px; }
@@ -225,7 +205,6 @@ footer p { margin: 0; font-size: .95rem; }
 .flotante, .red { animation: flotar 3s ease-in-out infinite; }
 .red:hover { animation-play-state: paused; }
 
-/* Redes: entran desde el costado al llegar a la sección (solo navegadores que lo soportan) */
 @keyframes entrar-lado {
   from { opacity: 0; transform: translateX(-60px); }
   to   { opacity: 1; transform: translateX(0); }
